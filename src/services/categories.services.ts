@@ -1,11 +1,8 @@
-import { config } from '../config'
-import { createClient } from '@commercetools/sdk-client'
-import { createAuthMiddlewareForClientCredentialsFlow } from '@commercetools/sdk-middleware-auth'
-import { createHttpMiddleware } from '@commercetools/sdk-middleware-http'
-import {
-  createRequestBuilder,
-  features
-} from '@commercetools/api-request-builder'
+import { config } from '../config';
+import { createClient } from '@commercetools/sdk-client';
+import { createAuthMiddlewareForClientCredentialsFlow } from '@commercetools/sdk-middleware-auth';
+import { createHttpMiddleware } from '@commercetools/sdk-middleware-http';
+import {createRequestBuilder,features } from '@commercetools/api-request-builder';
 require('es6-promise').polyfill()
 const fetch = require('isomorphic-fetch')
 

@@ -1,4 +1,4 @@
-import { Category } from '@commercetools/platform-sdk';
+// import { Category as CtCategory} from '@commercetools/platform-sdk';
 import { categoriesService } from '../services/categories.services';
 import { execute, logAndExit, createStandardDelete } from '../helpers';
 import * as dotenv from 'dotenv';
@@ -110,11 +110,11 @@ const saveRecursive = (groupedCategories: GroupedCategories): Promise<SaveResult
               parent: { key: category.parent }
             }
           : category
-      ).map((category) => {
+      ).map((category: any) => {
         const request: Request = {
           uri: categoriesService.build(),
           method: 'POST',
-          body: category
+          body: category,
         };
         return execute(request);
       })

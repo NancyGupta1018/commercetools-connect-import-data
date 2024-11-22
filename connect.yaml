@@ -1,0 +1,17 @@
+deployAs:
+  - name: commercetools-connect-import-data
+    applicationType: service
+    endpoint: /service
+    configuration:
+      standardConfiguration:
+        - key: CONNECT
+          description: Description for CONNECT
+      securedConfiguration: []
+  - name: category
+    applicationType: service
+    endpoint: /category
+    configuration:
+      standardConfiguration:
+        - key: CONNECT
+          description: Description for CONNECT
+      securedConfiguration: []

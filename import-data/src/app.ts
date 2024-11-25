@@ -7,7 +7,7 @@ import bodyParser from 'body-parser';
 // Import routes
 // import ServiceRoutes from './routes/service.route';
 
-import categoriesRoutes from './routes/categories.route';
+import categoriesRouter from './routes/categories.route';
 
 import { readConfiguration } from './utils/config.utils';
 
@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Define routes
-app.use('/category', categoriesRoutes);
+app.use('/category', categoriesRouter);
 
 // app.use('*', () => {
 //   throw new CustomError(404, 'Path not found.');

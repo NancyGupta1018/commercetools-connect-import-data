@@ -1,5 +1,5 @@
 deployAs:
-  - name: commercetools-connect-import-data
+  - name: import-data
     applicationType: service
     endpoint: /category
     scripts:

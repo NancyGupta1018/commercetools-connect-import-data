@@ -57,6 +57,7 @@ const setParent = (categories: Category[]): Category[] => {
 
 // Recursive function to group categories by parent
 const groupByParent = (categories: Category[]): GroupedCategories => {
+  logger.info('Reached groupByParent Method', categories);
   const recur = (
     categories: Category[],
     map: Map<number, Category[]>,
@@ -94,7 +95,7 @@ const groupByParent = (categories: Category[]): GroupedCategories => {
 
 // Save categories recursively
 const saveRecursive = (groupedCategories: GroupedCategories): Promise<SaveResult> => {
-  logger.info('Reached saveRecursive Method');
+  logger.info('Reached saveRecursive Method', groupedCategories);
   const recur = (
     groupedCategories: GroupedCategories,
     index: number,
@@ -124,15 +125,17 @@ const saveRecursive = (groupedCategories: GroupedCategories): Promise<SaveResult
       recur(groupedCategories, index + 1, result.concat(result))
     );
   };
-
+  logger.info('Reached saveRecursive Method 2', groupedCategories);
   return recur(groupedCategories, 0, []);
 };
 
 // Import categories from CSV
 export const importCategories = (csvFilePath: string = process.env.CSV_FILE_PATH || './data/categories.csv'): Promise<void> => {
   logger.info('Reached importCategories Method',csvFilePath);
-  
+  console.log('CSV ------------------------',csvFilePath);
+
   const resolvedPath = path.resolve(csvFilePath);
+  logger.info('Reached resolvedPath Method',resolvedPath);
   
   return require('csvtojson')()
     .fromFile(resolvedPath)
@@ -140,10 +143,7 @@ export const importCategories = (csvFilePath: string = process.env.CSV_FILE_PATH
       saveRecursive(groupByParent(setParent(rawJson)))
     )
     .then(() =>
-      console.log(
-        '\x1b[32m%s\x1b[0m',
-        'Categories imported successfully'
-      )
+      console.log('Categories imported successfully')
     )
     .catch((err: Error) =>
       logAndExit(err, 'Failed to import categories')

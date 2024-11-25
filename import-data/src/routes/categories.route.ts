@@ -10,7 +10,7 @@ categoriesRouter.post('/', async(req, res, next)=>{
     logger.info('Create Categories message received');
     try {
         await importCategories();
-        res.send("Hello");
+        res.send("importing categories successfully!!");
       } catch (error) {
         next(error);
       }

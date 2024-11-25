@@ -3,6 +3,7 @@ import { categoriesService } from '../services/categories.services';
 import { execute, logAndExit, createStandardDelete } from '../helpers';
 import * as dotenv from 'dotenv';
 import * as path from 'path';
+import { logger } from '../utils/logger.utils';
 dotenv.config();
 
 // Define types for category-related objects
@@ -93,6 +94,7 @@ const groupByParent = (categories: Category[]): GroupedCategories => {
 
 // Save categories recursively
 const saveRecursive = (groupedCategories: GroupedCategories): Promise<SaveResult> => {
+  logger.info('Reached saveRecursive Method');
   const recur = (
     groupedCategories: GroupedCategories,
     index: number,
@@ -128,6 +130,8 @@ const saveRecursive = (groupedCategories: GroupedCategories): Promise<SaveResult
 
 // Import categories from CSV
 export const importCategories = (csvFilePath: string = process.env.CSV_FILE_PATH || './data/categories.csv'): Promise<void> => {
+  logger.info('Reached importCategories Method',csvFilePath);
+  
   const resolvedPath = path.resolve(csvFilePath);
   
   return require('csvtojson')()

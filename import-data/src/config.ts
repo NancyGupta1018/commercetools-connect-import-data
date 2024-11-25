@@ -9,6 +9,7 @@ interface Config {
   clientSecret: string | undefined;
   authUrl: string | undefined;
   apiUrl: string | undefined;
+  csvFilePath: string | undefined;
 }
 
 class Configuration {
@@ -40,6 +41,7 @@ class Configuration {
       clientSecret: process.env.CTP_CLIENT_SECRET,
       authUrl: process.env.CTP_AUTH_URL,
       apiUrl: process.env.CTP_API_URL,
+      csvFilePath: process.env.CSV_FILE_PATH,
     };
   }
 

@@ -25,17 +25,6 @@ class Configuration {
     this.print();
   }
 
-  // Normalize the URL to get only the protocol, host, and port
-  normalizeUrl(urlString: string): string {
-    // Ensure the URL starts with http:// or https://
-    if (!/^https?:\/\//i.test(urlString)) {
-      urlString = 'https://' + urlString;
-    }
-
-    // Parse and return only the origin (protocol, host, and port)
-    return new URL(urlString).origin;
-  }
-
   // Load configuration from environment variables
   load(): void {
     dotenv.config(); // Load environment variables from .env file
@@ -49,8 +38,8 @@ class Configuration {
       projectKey: process.env.CTP_PROJECT_KEY,
       clientId: process.env.CTP_CLIENT_ID,
       clientSecret: process.env.CTP_CLIENT_SECRET,
-      authUrl: this.normalizeUrl(process.env.CTP_AUTH_URL || ''),
-      apiUrl: this.normalizeUrl(process.env.CTP_API_URL || '')
+      authUrl: process.env.CTP_AUTH_URL,
+      apiUrl: process.env.CTP_API_URL,
     };
   }
 

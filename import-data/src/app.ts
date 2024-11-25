@@ -10,8 +10,6 @@ import bodyParser from 'body-parser';
 import categoriesRoutes from './routes/categories.route';
 
 import { readConfiguration } from './utils/config.utils';
-import { errorMiddleware } from './middleware/error.middleware';
-import CustomError from './errors/custom.error';
 
 // Read env variables
 readConfiguration();

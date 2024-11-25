@@ -1,6 +1,6 @@
 import { ClientBuilder } from '@commercetools/sdk-client-v2';
-import { authMiddlewareOptions } from '../middleware/auth.middleware';
-import { httpMiddlewareOptions } from '../middleware/http.middleware';
+import { authMiddlewareOptions } from '../middlewares/auth.middleware';
+import { httpMiddlewareOptions } from '../middlewares/http.middleware';
 import { readConfiguration } from '../utils/config.utils';
 
 /**

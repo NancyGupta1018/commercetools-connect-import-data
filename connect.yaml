@@ -19,4 +19,8 @@ deployAs:
           description: scope from commercetools composable commerce project
         - key: CSV_FILE_PATH
           description: csv file path from commercetools composable commerce project
+        - key: CTP_API_URL
+          description: CTP_API_URL from commercetools composable commerce project
+        - key: CTP_AUTH_URL
+          description: CTP_AUTH_URL file path from commercetools composable commerce project
   

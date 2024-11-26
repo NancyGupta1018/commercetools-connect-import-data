@@ -1,4 +1,4 @@
-import { createApiRoot } from '../clients/create.client.js';
+import { createApiRoot } from '../clients/create.client';
 
 async function preUndeploy() {
   const apiRoot = createApiRoot();

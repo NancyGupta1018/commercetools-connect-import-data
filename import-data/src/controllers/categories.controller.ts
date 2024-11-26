@@ -104,7 +104,7 @@ const saveRecursive = (groupedCategories: GroupedCategories): Promise<SaveResult
     if (index === groupedCategories.length) {
       return Promise.resolve(result);
     }
-
+    logger.info('Reached recur Method', recur);
     return Promise.all(
       groupedCategories[index].map((category) =>
         category.parent

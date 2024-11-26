@@ -57,7 +57,6 @@ const setParent = (categories: Category[]): Category[] => {
 
 // Recursive function to group categories by parent
 const groupByParent = (categories: Category[]): GroupedCategories => {
-  logger.info('Reached groupByParent Method', categories);
   const recur = (
     categories: Category[],
     map: Map<number, Category[]>,
@@ -95,7 +94,7 @@ const groupByParent = (categories: Category[]): GroupedCategories => {
 
 // Save categories recursively
 const saveRecursive = (groupedCategories: GroupedCategories): Promise<SaveResult> => {
-  logger.info('Reached saveRecursive Method', groupedCategories);
+  logger.info('Reached saveRecursive Method');
   const recur = (
     groupedCategories: GroupedCategories,
     index: number,
@@ -104,7 +103,7 @@ const saveRecursive = (groupedCategories: GroupedCategories): Promise<SaveResult
     if (index === groupedCategories.length) {
       return Promise.resolve(result);
     }
-    logger.info('Reached recur Method', recur);
+
     return Promise.all(
       groupedCategories[index].map((category) =>
         category.parent
@@ -119,28 +118,27 @@ const saveRecursive = (groupedCategories: GroupedCategories): Promise<SaveResult
           method: 'POST',
           body: category,
         };
-        logger.info('Reached saveRecursive 4', request);
-
         return execute(request);
       })
     ).then((result) =>
       recur(groupedCategories, index + 1, result.concat(result))
     );
   };
-  logger.info('Reached saveRecursive Method 2', groupedCategories);
-  logger.info('Reached saveRecursive Method 3', recur);
 
   return recur(groupedCategories, 0, []);
 };
 
-// Import categories from CSV
 export const importCategories = (csvFilePath: string = process.env.CSV_FILE_PATH || './data/categories.csv'): Promise<void> => {
   logger.info('Reached importCategories Method',csvFilePath);
-  console.log('CSV ------------------------',csvFilePath);
+ 
 
   const resolvedPath = path.resolve(csvFilePath);
   logger.info('Reached resolvedPath Method',resolvedPath);
   
+  logger.info('before deleting catogires');
+  deleteAllCategories();
+  logger.info('after deleting catogires');
+
   return require('csvtojson')()
     .fromFile(resolvedPath)
     .then((rawJson: Category[]) =>
@@ -153,3 +151,5 @@ export const importCategories = (csvFilePath: string = process.env.CSV_FILE_PATH
       logAndExit(err, 'Failed to import categories')
     );
 };
+
+

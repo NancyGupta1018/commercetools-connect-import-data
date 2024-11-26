@@ -153,11 +153,3 @@ export const importCategories = (csvFilePath: string = process.env.CSV_FILE_PATH
       logAndExit(err, 'Failed to import categories')
     );
 };
-
-// Execute operations based on environment configuration (via dotenv)
-if (process.env.CLEAN === 'true') {
-  deleteAllCategories();
-} else if (process.env.IMPORT === 'true') {
-  console.log('\x1b[32m%s\x1b[0m', 'Importing categories...');
-  importCategories(process.env.CSV_FILE_PATH); // CSV path can now be set via environment variable
-}

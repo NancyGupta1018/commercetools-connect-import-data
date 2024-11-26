@@ -119,6 +119,8 @@ const saveRecursive = (groupedCategories: GroupedCategories): Promise<SaveResult
           method: 'POST',
           body: category,
         };
+        logger.info('Reached saveRecursive 4', request);
+
         return execute(request);
       })
     ).then((result) =>
@@ -126,6 +128,8 @@ const saveRecursive = (groupedCategories: GroupedCategories): Promise<SaveResult
     );
   };
   logger.info('Reached saveRecursive Method 2', groupedCategories);
+  logger.info('Reached saveRecursive Method 3', recur);
+
   return recur(groupedCategories, 0, []);
 };
 

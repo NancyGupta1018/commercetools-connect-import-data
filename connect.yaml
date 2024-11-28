@@ -1,5 +1,5 @@
 deployAs:
-  - name: import-data
+  - name: import-categories
     applicationType: service
     endpoint: /category
     scripts:
@@ -24,7 +24,7 @@ deployAs:
         - key: CTP_AUTH_URL
           description: CTP_AUTH_URL file path from commercetools composable commerce project
 
-  - name: import-data
+  - name: import-channels
     applicationType: service
     endpoint: /channel
     scripts:
@@ -47,7 +47,7 @@ deployAs:
         - key: CTP_AUTH_URL
           description: CTP_AUTH_URL file path from commercetools composable commerce project
     
-  - name: import-data
+  - name: import-stores
     applicationType: service
     endpoint: /stores
     scripts:

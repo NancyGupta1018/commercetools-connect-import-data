@@ -1,0 +1,15 @@
+[{
+    "key": "PharmacyStore",
+    "name": {
+        "en": "Pharmacy Store"
+    },
+    "languages": ["en-US"]
+},
+{
+    "key": "localStore",
+    "name": {
+        "en": "local Store"
+    },
+    "languages": ["en-US"]
+}
+]

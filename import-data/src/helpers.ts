@@ -1,4 +1,4 @@
-import { client } from './services/categories.services';
+import { client } from './services/services';
 import { SingleBar, Presets } from 'cli-progress';
 import * as fs from 'fs';
 
@@ -83,7 +83,7 @@ export const execute = createLimiter()(
 );
 
 export const getAll = (
-  getterFn: Function,
+  getterFn: any,
   service: any
 ) => (
   request: any,

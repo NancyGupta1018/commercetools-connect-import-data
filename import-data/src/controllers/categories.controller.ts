@@ -1,5 +1,5 @@
 // import { Category as CtCategory} from '@commercetools/platform-sdk';
-import { categoriesService } from '../services/categories.services';
+import { categoriesService } from '../services/services';
 import { execute, logAndExit, createStandardDelete } from '../helpers';
 import * as dotenv from 'dotenv';
 import * as path from 'path';

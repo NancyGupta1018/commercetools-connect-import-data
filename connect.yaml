@@ -1,7 +1,10 @@
 deployAs:
   - name: import-data
     applicationType: service
-    endpoint: /category
+    endpoints:
+      - /category
+      - /channel
+      - /stores
     scripts:
       postDeploy: npm install
     configuration:

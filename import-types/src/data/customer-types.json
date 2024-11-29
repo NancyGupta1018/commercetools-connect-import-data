@@ -1,0 +1,39 @@
+[
+  {
+    "key": "AndroidUser",
+    "name": {
+      "de": "AndroidUser",
+      "en": "AndroidUser"
+    },
+    "resourceTypeIds": [
+      "customer"
+    ],
+    "fieldDefinitions": [
+      {
+        "name": "apnsToken",
+        "label": {
+          "en": "apnsToken",
+          "de": "apnsToken"
+        },
+        "required": false,
+        "type": {
+          "name": "String"
+        },
+        "inputHint": "SingleLine"
+      },
+      {
+        "name": "myStore",
+        "label": {
+          "en": "myStore",
+          "de": "meinLaden"
+        },
+        "required": false,
+        "type": {
+          "name": "Reference",
+          "referenceTypeId": "channel"
+        },
+        "inputHint": "SingleLine"
+      }
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "key": "deliveredOrder",
+    "name": {
+      "en": "Delivered Products",
+      "de": "Unslksqhd Produkte"
+    },
+    "resourceTypeIds": [
+      "order"
+    ],
+    "fieldDefinitions": [
+      {
+        "name": "isDelivered",
+        "label": {
+          "en": "Delivered",
+          "de": "Umnkadlk"
+        },
+        "required": false,
+        "type": {
+          "name": "Boolean"
+        },
+        "inputHint": "SingleLine"
+      }
+    ]
+  }
+]

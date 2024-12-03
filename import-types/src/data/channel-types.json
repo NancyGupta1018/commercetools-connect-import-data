@@ -1,9 +1,9 @@
 [
   {
-    "key": "physicalStore",
+    "key": "physicalStore2",
     "name": {
       "de": "Ladengeschäft",
-      "en": "Physical Store"
+      "en": "Physical Store 2"
     },
     "resourceTypeIds": [
       "channel"

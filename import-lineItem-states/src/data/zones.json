@@ -1,23 +1,16 @@
 [
   {
-    "name": "Netherland",
-    "description": "Netherland",
+    "name": "NewZealand",
+    "description": "NewZealand",
     "locations": [
-      { "country": "NL"}
+      { "country": "NZ"}
     ]
   },
   {
-    "name": "Singapore",
-    "description": "Singapore",
+    "name": "India",
+    "description": "India",
     "locations": [
-      { "country": "SG"}
-    ]
-  },
-  {
-    "name": "Europe",
-    "description": "Europe",
-    "locations": [
-      { "country": "EU"}
+      { "country": "IN"}
     ]
   }
 ]

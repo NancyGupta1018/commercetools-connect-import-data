@@ -4,7 +4,7 @@ import {
   execute,
   createStandardDelete
 } from '../helpers'
-const nconf = require('nconf')
+// const nconf = require('nconf')
 
 export const deleteAllLineItemStates = () =>
   createStandardDelete({
@@ -55,7 +55,7 @@ const createTransactionsDraft = (toIds: any[]) => {
 
   return [
     {
-      action: 'transaction-state-1',
+      action: 'setTransitions',
       transitions: transactionObj
     }
   ]
@@ -77,7 +77,7 @@ const createTransactions = (fromId: any, toIds: any[]) =>
   })
 
 // return a promise
-const createState = (key: any, nameEN: any, nameDE: any) =>
+const createState = ([key, nameEN, nameDE]: any) =>
   execute({
     uri: stateService.build(),
     method: 'POST',
@@ -93,37 +93,37 @@ export const importLineItemStates = () =>
     .then((initialId) =>
       Promise.all(
         [
-          ["readyToShip", "Ready to Ship", "Versandfertig"],
+          ['readyToShip', 'Ready to Ship', 'Versandfertig'],
           [
-            "backorder",
-            "In replenishment",
-            "Wird nachbestellt"
+            'backorder',
+            'In replenishment',
+            'Wird nachbestellt'
           ],
-          ["shipped", "Shipped", "Versandt"],
-          ["canceled", "Canceled", "Storniert"],
-          ["picking", "Picking", "Picking"],
-          ["returned", "Returned", "Retourniert"],
+          ['shipped', 'Shipped', 'Versandt'],
+          ['canceled', 'Canceled', 'Storniert'],
+          ['picking', 'Picking', 'Picking'],
+          ['returned', 'Returned', 'Retourniert'],
           [
-            "returnApproved",
-            "Return approved",
-            "Retoure akzeptiert"
-          ],
-          [
-            "returnNotApproved",
-            "Return not approved",
-            "Retoure nicht akzeptiert"
-          ],
-          ["closed", "Closed", "Abgeschlossen"],
-          ["lost", "Lost", "Verloren gegangen"],
-          [
-            "lossApproved",
-            "Loss Approved",
-            "Verlust bestätigt"
+            'returnApproved',
+            'Return approved',
+            'Retoure akzeptiert'
           ],
           [
-            "lossNotApproved",
-            "Loss not Approved",
-            "Wieder gefunden"
+            'returnNotApproved',
+            'Return not approved',
+            'Retoure nicht akzeptiert'
+          ],
+          ['closed', 'Closed', 'Abgeschlossen'],
+          ['lost', 'Lost', 'Verloren gegangen'],
+          [
+            'lossApproved',
+            'Loss Approved',
+            'Verlust bestätigt'
+          ],
+          [
+            'lossNotApproved',
+            'Loss not Approved',
+            'Wieder gefunden'
           ]
         ]
           .map(createState)
@@ -182,13 +182,13 @@ export const importLineItemStates = () =>
       logAndExit(err, 'Failed to import states')
     )
 
-if (nconf.get('clean')) {
-  deleteAllLineItemStates()
-} else if (nconf.get('import')) {
-  // eslint-disable-next-line no-console
-  console.log(
-    '\x1b[32m%s\x1b[0m',
-    'Importing line item states...'
-  )
-  importLineItemStates()
-}
+// if (nconf.get('clean')) {
+//   deleteAllLineItemStates()
+// } else if (nconf.get('import')) {
+//   // eslint-disable-next-line no-console
+//   console.log(
+//     '\x1b[32m%s\x1b[0m',
+//     'Importing line item states...'
+//   )
+//   importLineItemStates()
+// }

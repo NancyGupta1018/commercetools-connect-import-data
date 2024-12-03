@@ -1,8 +1,8 @@
 [
     {
-        "customerNumber": "1",
-        "email": "jane.doe@example.com",
-        "firstName": "Jane",
+        "customerNumber": "3",
+        "email": "jake.doe@example.com",
+        "firstName": "jake",
         "lastName": "Doe",
         "title": "Mrs",
         "password": "p@ssword",
@@ -10,7 +10,7 @@
             {
                 "id": "PPM3YhMK",
                 "title": "Mrs.",
-                "firstName": "Jane",
+                "firstName": "jake",
                 "lastName": "Doe",
                 "streetName": "First Street",
                 "streetNumber": "12",
@@ -19,12 +19,12 @@
                 "country": "NL",
                 "phone": "+312345678",
                 "mobile": "+312345679",
-                "email": "jane.doe@example.com"
+                "email": "jake.doe@example.com"
             },
             {
                 "id": "kzVASZ9O",
                 "title": "Head of factory",
-                "firstName": "Jane",
+                "firstName": "jake",
                 "lastName": "Doe",
                 "streetName": "Third Street",
                 "streetNumber": "34",
@@ -33,7 +33,7 @@
                 "country": "NL",
                 "phone": "+3112345678",
                 "mobile": "+3112345679",
-                "email": "jane.doe@example.com"
+                "email": "jake.doe@example.com"
             }
         ],
         "shippingAddressIds": [
@@ -43,13 +43,13 @@
             "kzVASZ9O"
         ],
         "isEmailVerified": true,
-        "key": "janeDoe",
-        "dateOfBirth": "1974-09-20"
+        "key": "jakeDoe",
+        "dateOfBirth": "1974-09-10"
     },
     {
-        "customerNumber": "2",
-        "email": "john.doe@example.com",
-        "firstName": "John",
+        "customerNumber": "4",
+        "email": "marie.doe@example.com",
+        "firstName": "marie",
         "lastName": "Doe",
         "title": "Mr.",
         "password": "p@ssword",
@@ -57,7 +57,7 @@
             {
                 "id": "a-qURQXR",
                 "title": "Mr.",
-                "firstName": "John",
+                "firstName": "marie",
                 "lastName": "Doe",
                 "streetName": "Second Street",
                 "streetNumber": "13",
@@ -66,7 +66,7 @@
                 "country": "NL",
                 "phone": "+31123456780",
                 "mobile": "+31123456781",
-                "email": "john.doe@example.com"
+                "email": "marie.doe@example.com"
             }
         ],
         "shippingAddressIds": [
@@ -76,8 +76,8 @@
             "a-qURQXR"
         ],
         "isEmailVerified": true,
-        "key": "johnDoe",
-        "dateOfBirth": "1943-12-18",
+        "key": "marieDoe",
+        "dateOfBirth": "1943-11-18",
         "companyName": "Example Company"
     }
 ]

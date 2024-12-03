@@ -31,7 +31,7 @@ export const importCustomers = () =>
 export const importCustomerGroups = () =>
   Promise.all(
     require(process.cwd() +
-      '/data/customer-groups.json').map((customerGroup: any) =>
+      '/src/data/customer-groups.json').map((customerGroup: any) =>
       execute({
         uri: customerGroupService.build(),
         method: 'POST',

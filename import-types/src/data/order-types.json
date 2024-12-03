@@ -1,9 +1,9 @@
 [
   {
-    "key": "deliveredOrder",
+    "key": "deliveredOrder2",
     "name": {
-      "en": "Delivered Products",
-      "de": "Unslksqhd Produkte"
+      "en": "Delivered Products2",
+      "de": "Unslksqhd Produkte2"
     },
     "resourceTypeIds": [
       "order"

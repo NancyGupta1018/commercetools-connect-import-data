@@ -1,9 +1,9 @@
 [
   {
-    "key": "AndroidUser",
+    "key": "AndroidUser2",
     "name": {
-      "de": "AndroidUser",
-      "en": "AndroidUser"
+      "de": "AndroidUser2",
+      "en": "AndroidUser2"
     },
     "resourceTypeIds": [
       "customer"

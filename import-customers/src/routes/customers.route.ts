@@ -2,7 +2,7 @@
 import { Router } from 'express';
 
 import { logger } from '../utils/logger.utils';
-import { importCustomers } from '../controllers/customers.controller';
+import { importCustomerGroups, importCustomers } from '../controllers/customers.controller';
 
 const customerRouter = Router();
 
@@ -11,7 +11,8 @@ customerRouter.post('/', async(req, res, next)=>{
     try {
         logger.info('Create customer try block');
         await importCustomers();
-        res.send("importing customer successfully!!");
+        await importCustomerGroups();
+        res.send("importing customer and customer groups successfully!!");
       } catch (error) {
         next(error);
       }

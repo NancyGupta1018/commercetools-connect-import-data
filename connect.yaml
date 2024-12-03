@@ -323,9 +323,9 @@ deployAs:
           - key: CTP_AUTH_URL
             description: CTP_AUTH_URL file path from commercetools composable commerce project
 
-  - name: import-products-discount
+  - name: import-product-discount
       applicationType: service
-      endpoint: /products-discount
+      endpoint: /product-discount
       scripts:
         postDeploy: npm install
       configuration:

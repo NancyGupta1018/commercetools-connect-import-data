@@ -276,6 +276,8 @@ deployAs:
             description: CTP_API_URL from commercetools composable commerce project
           - key: CTP_AUTH_URL
             description: CTP_AUTH_URL file path from commercetools composable commerce project
+          - key: ORDERS_CSV_FILE_PATH
+            description: ORDERS_CSV_FILE_PATH file path from commercetools composable commerce project
 
   - name: import-products
       applicationType: service

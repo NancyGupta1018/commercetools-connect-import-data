@@ -1,9 +1,9 @@
 [
   {
-    "key": "physicalStore2",
+    "key": "chemicalStore",
     "name": {
       "de": "Ladengeschäft",
-      "en": "Physical Store 2"
+      "en": "Chemical Store"
     },
     "resourceTypeIds": [
       "channel"
@@ -22,16 +22,16 @@
         "inputHint": "SingleLine"
       },
       {
-        "name": "openingTimes",
+        "name": "ClosingTimes",
         "label": {
           "de": "Öffnungszeiten",
-          "en": "Opening Times"
+          "en": "Closing Times"
         },
         "required": true,
         "type": {
-          "name": "String"
+          "name": "LocalizedString"
         },
-        "inputHint": "SingleLine"
+        "inputHint": "MultiLine"
       }
     ]
   }

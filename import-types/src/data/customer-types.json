@@ -1,9 +1,9 @@
 [
   {
-    "key": "AndroidUser2",
+    "key": "androidUser2",
     "name": {
-      "de": "AndroidUser2",
-      "en": "AndroidUser2"
+      "de": "androidUser2",
+      "en": "androidUser2"
     },
     "resourceTypeIds": [
       "customer"
@@ -22,9 +22,9 @@
         "inputHint": "SingleLine"
       },
       {
-        "name": "myStore",
+        "name": "myStore2",
         "label": {
-          "en": "myStore",
+          "en": "myStore2",
           "de": "meinLaden"
         },
         "required": false,

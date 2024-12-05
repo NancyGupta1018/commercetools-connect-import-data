@@ -1,19 +1,19 @@
 [
   {
-    "key": "deliveredOrder2",
+    "key": "UnreservedOrder",
     "name": {
-      "en": "Delivered Products2",
-      "de": "Unslksqhd Produkte2"
+      "en": "Unreserved Order",
+      "de": "Reservierte Produkte"
     },
     "resourceTypeIds": [
       "order"
     ],
     "fieldDefinitions": [
       {
-        "name": "isDelivered",
+        "name": "isReservation",
         "label": {
-          "en": "Delivered",
-          "de": "Umnkadlk"
+          "en": "Reservation",
+          "de": "Reservierung"
         },
         "required": false,
         "type": {

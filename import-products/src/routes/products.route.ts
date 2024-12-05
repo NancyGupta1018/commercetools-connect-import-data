@@ -12,13 +12,25 @@ productRouter.post('/create-products', async(req, res, next)=>{
     logger.info('Importing products message received');
     try {
         logger.info('Create products try block');
-        await importProductTypes();
         await importProducts();
         res.send("importing products successfully!!");
       } catch (error) {
         next(error);
       }
     });
+
+
+  productRouter.post('/create-productTypes', async(req, res, next)=>{
+    logger.info('Importing product type message received');
+    try {
+        logger.info('Create product-types try block');
+        await importProductTypes();
+        res.send("importing product types successfully!!");
+      } catch (error) {
+        next(error);
+      }
+    });
+  
 
     productRouter.post('/product-states', async(req, res, next)=>{
     logger.info('Importing product states n message received');

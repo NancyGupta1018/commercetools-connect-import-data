@@ -12,8 +12,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const logger_utils_1 = require("../utils/logger.utils");
 const products_controller_1 = require("../controllers/products.controller");
+const productStates_controller_1 = require("../controllers/productStates.controller");
+const productDiscount_controller_1 = require("../controllers/productDiscount.controller");
 const productRouter = (0, express_1.Router)();
-productRouter.post('/', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+productRouter.post('/create-products', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     logger_utils_1.logger.info('Importing products message received');
     try {
         logger_utils_1.logger.info('Create products try block');
@@ -25,5 +27,27 @@ productRouter.post('/', (req, res, next) => __awaiter(void 0, void 0, void 0, fu
         next(error);
     }
 }));
+productRouter.post('/product-states', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    logger_utils_1.logger.info('Importing product states n message received');
+    try {
+        logger_utils_1.logger.info('Create product states try block');
+        yield (0, productStates_controller_1.importProductStates)();
+        res.send("importing product states successfully!!");
+    }
+    catch (error) {
+        next(error);
+    }
+}));
+productRouter.post('/product-discount', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    logger_utils_1.logger.info('Importing product discount message received');
+    try {
+        logger_utils_1.logger.info('Create product discount try block');
+        yield (0, productDiscount_controller_1.importProductDiscounts)();
+        res.send("importing product discount successfully!!");
+    }
+    catch (error) {
+        next(error);
+    }
+}));
 exports.default = productRouter;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHJvZHVjdHMucm91dGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvcm91dGVzL3Byb2R1Y3RzLnJvdXRlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7O0FBQ0EscUNBQWlDO0FBRWpDLHdEQUErQztBQUMvQyw0RUFBd0Y7QUFFeEYsTUFBTSxhQUFhLEdBQUcsSUFBQSxnQkFBTSxHQUFFLENBQUM7QUFFL0IsYUFBYSxDQUFDLElBQUksQ0FBQyxHQUFHLEVBQUUsQ0FBTSxHQUFHLEVBQUUsR0FBRyxFQUFFLElBQUksRUFBQyxFQUFFO0lBQzNDLHFCQUFNLENBQUMsSUFBSSxDQUFDLHFDQUFxQyxDQUFDLENBQUM7SUFDbkQsSUFBSSxDQUFDO1FBQ0QscUJBQU0sQ0FBQyxJQUFJLENBQUMsMkJBQTJCLENBQUMsQ0FBQztRQUN6QyxNQUFNLElBQUEsd0NBQWtCLEdBQUUsQ0FBQztRQUMzQixNQUFNLElBQUEsb0NBQWMsR0FBRSxDQUFDO1FBQ3ZCLEdBQUcsQ0FBQyxJQUFJLENBQUMsbUNBQW1DLENBQUMsQ0FBQztJQUNoRCxDQUFDO0lBQUMsT0FBTyxLQUFLLEVBQUUsQ0FBQztRQUNmLElBQUksQ0FBQyxLQUFLLENBQUMsQ0FBQztJQUNkLENBQUM7QUFDSCxDQUFDLENBQUEsQ0FBQyxDQUFDO0FBSVAsa0JBQWUsYUFBYSxDQUFDIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHJvZHVjdHMucm91dGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvcm91dGVzL3Byb2R1Y3RzLnJvdXRlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7O0FBQ0EscUNBQWlDO0FBRWpDLHdEQUErQztBQUMvQyw0RUFBd0Y7QUFDeEYsc0ZBQThFO0FBQzlFLDBGQUFtRjtBQUVuRixNQUFNLGFBQWEsR0FBRyxJQUFBLGdCQUFNLEdBQUUsQ0FBQztBQUUvQixhQUFhLENBQUMsSUFBSSxDQUFDLGtCQUFrQixFQUFFLENBQU0sR0FBRyxFQUFFLEdBQUcsRUFBRSxJQUFJLEVBQUMsRUFBRTtJQUMxRCxxQkFBTSxDQUFDLElBQUksQ0FBQyxxQ0FBcUMsQ0FBQyxDQUFDO0lBQ25ELElBQUksQ0FBQztRQUNELHFCQUFNLENBQUMsSUFBSSxDQUFDLDJCQUEyQixDQUFDLENBQUM7UUFDekMsTUFBTSxJQUFBLHdDQUFrQixHQUFFLENBQUM7UUFDM0IsTUFBTSxJQUFBLG9DQUFjLEdBQUUsQ0FBQztRQUN2QixHQUFHLENBQUMsSUFBSSxDQUFDLG1DQUFtQyxDQUFDLENBQUM7SUFDaEQsQ0FBQztJQUFDLE9BQU8sS0FBSyxFQUFFLENBQUM7UUFDZixJQUFJLENBQUMsS0FBSyxDQUFDLENBQUM7SUFDZCxDQUFDO0FBQ0gsQ0FBQyxDQUFBLENBQUMsQ0FBQztBQUVILGFBQWEsQ0FBQyxJQUFJLENBQUMsaUJBQWlCLEVBQUUsQ0FBTSxHQUFHLEVBQUUsR0FBRyxFQUFFLElBQUksRUFBQyxFQUFFO0lBQzdELHFCQUFNLENBQUMsSUFBSSxDQUFDLDZDQUE2QyxDQUFDLENBQUM7SUFDM0QsSUFBSSxDQUFDO1FBQ0QscUJBQU0sQ0FBQyxJQUFJLENBQUMsaUNBQWlDLENBQUMsQ0FBQztRQUMvQyxNQUFNLElBQUEsOENBQW1CLEdBQUUsQ0FBQztRQUM1QixHQUFHLENBQUMsSUFBSSxDQUFDLHlDQUF5QyxDQUFDLENBQUM7SUFDdEQsQ0FBQztJQUFDLE9BQU8sS0FBSyxFQUFFLENBQUM7UUFDZixJQUFJLENBQUMsS0FBSyxDQUFDLENBQUM7SUFDZCxDQUFDO0FBQ0gsQ0FBQyxDQUFBLENBQUMsQ0FBQztBQUdILGFBQWEsQ0FBQyxJQUFJLENBQUMsbUJBQW1CLEVBQUUsQ0FBTSxHQUFHLEVBQUUsR0FBRyxFQUFFLElBQUksRUFBQyxFQUFFO0lBQzdELHFCQUFNLENBQUMsSUFBSSxDQUFDLDZDQUE2QyxDQUFDLENBQUM7SUFDM0QsSUFBSSxDQUFDO1FBQ0QscUJBQU0sQ0FBQyxJQUFJLENBQUMsbUNBQW1DLENBQUMsQ0FBQztRQUNqRCxNQUFNLElBQUEsbURBQXNCLEdBQUUsQ0FBQztRQUMvQixHQUFHLENBQUMsSUFBSSxDQUFDLDJDQUEyQyxDQUFDLENBQUM7SUFDeEQsQ0FBQztJQUFDLE9BQU8sS0FBSyxFQUFFLENBQUM7UUFDZixJQUFJLENBQUMsS0FBSyxDQUFDLENBQUM7SUFDZCxDQUFDO0FBQ0gsQ0FBQyxDQUFBLENBQUMsQ0FBQztBQUtULGtCQUFlLGFBQWEsQ0FBQyJ9

@@ -38,12 +38,30 @@ const createProducts = () =>
   createRequestBuilder({ projectKey: config.projectKey })
     .products
 
+
+const createStatesService = () =>
+  createRequestBuilder({ projectKey: config.projectKey })
+    .states
+
+
+
+const createProductDiscount = () =>
+  createRequestBuilder({ projectKey: config.projectKey })
+    .productDiscounts
+
+
+
 export const channelsService = createChannels()
+
 export const customerGroupService = createCustomerGroupService()
 
 export const productTypesService = createProductTypes()
+
 export const productsService = createProducts()
 
+export const stateService = createStatesService()
+
+export const productDiscountService = createProductDiscount()
 
 
 

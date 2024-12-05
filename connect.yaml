@@ -1,7 +1,32 @@
 deployAs:
-  - name: import-product-discount
+  - name: import-categories
     applicationType: service
-    endpoint: /product-discount
+    endpoint: /category
+    scripts:
+      postDeploy: npm install
+    configuration:
+      standardConfiguration:
+        - key: CTP_REGION
+          description: region of commercetools composable commerce project
+      securedConfiguration:
+        - key: CTP_PROJECT_KEY
+          description: project key from commercetools composable commerce project
+        - key: CTP_CLIENT_ID
+          description: client id from commercetools composable commerce project
+        - key: CTP_CLIENT_SECRET
+          description: client secret from commercetools composable commerce project
+        - key: CTP_SCOPE
+          description: scope from commercetools composable commerce project
+        - key: CSV_FILE_PATH
+          description: csv file path from commercetools composable commerce project
+        - key: CTP_API_URL
+          description: CTP_API_URL from commercetools composable commerce project
+        - key: CTP_AUTH_URL
+          description: CTP_AUTH_URL file path from commercetools composable commerce project
+
+  - name: import-channels
+    applicationType: service
+    endpoint: /channel
     scripts:
       postDeploy: npm install
     configuration:
@@ -21,3 +46,187 @@ deployAs:
           description: CTP_API_URL from commercetools composable commerce project
         - key: CTP_AUTH_URL
           description: CTP_AUTH_URL file path from commercetools composable commerce project
+    
+  - name: import-stores
+    applicationType: service
+    endpoint: /stores
+    scripts:
+      postDeploy: npm install
+    configuration:
+      standardConfiguration:
+        - key: CTP_REGION
+          description: region of commercetools composable commerce project
+      securedConfiguration:
+        - key: CTP_PROJECT_KEY
+          description: project key from commercetools composable commerce project
+        - key: CTP_CLIENT_ID
+          description: client id from commercetools composable commerce project
+        - key: CTP_CLIENT_SECRET
+          description: client secret from commercetools composable commerce project
+        - key: CTP_SCOPE
+          description: scope from commercetools composable commerce project
+        - key: CTP_API_URL
+          description: CTP_API_URL from commercetools composable commerce project
+        - key: CTP_AUTH_URL
+          description: CTP_AUTH_URL file path from commercetools composable commerce project
+
+  - name: import-customers
+    applicationType: service
+    endpoint: /customers
+    scripts:
+      postDeploy: npm install
+    configuration:
+      standardConfiguration:
+        - key: CTP_REGION
+          description: region of commercetools composable commerce project
+      securedConfiguration:
+        - key: CTP_PROJECT_KEY
+          description: project key from commercetools composable commerce project
+        - key: CTP_CLIENT_ID
+          description: client id from commercetools composable commerce project
+        - key: CTP_CLIENT_SECRET
+          description: client secret from commercetools composable commerce project
+        - key: CTP_SCOPE
+          description: scope from commercetools composable commerce project
+        - key: CTP_API_URL
+          description: CTP_API_URL from commercetools composable commerce project
+        - key: CTP_AUTH_URL
+          description: CTP_AUTH_URL file path from commercetools composable commerce project
+
+  - name: import-tax-categories
+    applicationType: service
+    endpoint: /tax-categories
+    scripts:
+      postDeploy: npm install
+    configuration:
+      standardConfiguration:
+        - key: CTP_REGION
+          description: region of commercetools composable commerce project
+      securedConfiguration:
+        - key: CTP_PROJECT_KEY
+          description: project key from commercetools composable commerce project
+        - key: CTP_CLIENT_ID
+          description: client id from commercetools composable commerce project
+        - key: CTP_CLIENT_SECRET
+          description: client secret from commercetools composable commerce project
+        - key: CTP_SCOPE
+          description: scope from commercetools composable commerce project
+        - key: CTP_API_URL
+          description: CTP_API_URL from commercetools composable commerce project
+        - key: CTP_AUTH_URL
+          description: CTP_AUTH_URL file path from commercetools composable commerce project
+    
+  - name: import-zones
+    applicationType: service
+    endpoint: /zones
+    scripts:
+      postDeploy: npm install
+    configuration:
+      standardConfiguration:
+        - key: CTP_REGION
+          description: region of commercetools composable commerce project
+      securedConfiguration:
+        - key: CTP_PROJECT_KEY
+          description: project key from commercetools composable commerce project
+        - key: CTP_CLIENT_ID
+          description: client id from commercetools composable commerce project
+        - key: CTP_CLIENT_SECRET
+          description: client secret from commercetools composable commerce project
+        - key: CTP_SCOPE
+          description: scope from commercetools composable commerce project
+        - key: CTP_API_URL
+          description: CTP_API_URL from commercetools composable commerce project
+        - key: CTP_AUTH_URL
+          description: CTP_AUTH_URL file path from commercetools composable commerce project
+
+  - name: import-types
+    applicationType: service
+    endpoint: /types
+    scripts:
+      postDeploy: npm install
+    configuration:
+      standardConfiguration:
+        - key: CTP_REGION
+          description: region of commercetools composable commerce project
+      securedConfiguration:
+        - key: CTP_PROJECT_KEY
+          description: project key from commercetools composable commerce project
+        - key: CTP_CLIENT_ID
+          description: client id from commercetools composable commerce project
+        - key: CTP_CLIENT_SECRET
+          description: client secret from commercetools composable commerce project
+        - key: CTP_SCOPE
+          description: scope from commercetools composable commerce project
+        - key: CTP_API_URL
+          description: CTP_API_URL from commercetools composable commerce project
+        - key: CTP_AUTH_URL
+          description: CTP_AUTH_URL file path from commercetools composable commerce project
+
+  - name: import-projects
+    applicationType: service
+    endpoint: /projects
+    scripts:
+      postDeploy: npm install
+    configuration:
+      standardConfiguration:
+        - key: CTP_REGION
+          description: region of commercetools composable commerce project
+      securedConfiguration:
+        - key: CTP_PROJECT_KEY
+          description: project key from commercetools composable commerce project
+        - key: CTP_CLIENT_ID
+          description: client id from commercetools composable commerce project
+        - key: CTP_CLIENT_SECRET
+          description: client secret from commercetools composable commerce project
+        - key: CTP_SCOPE
+          description: scope from commercetools composable commerce project
+        - key: CTP_API_URL
+          description: CTP_API_URL from commercetools composable commerce project
+        - key: CTP_AUTH_URL
+          description: CTP_AUTH_URL file path from commercetools composable commerce project
+    
+  - name: import-carts
+    applicationType: service
+    endpoint: /carts
+    scripts:
+      postDeploy: npm install
+    configuration:
+      standardConfiguration:
+        - key: CTP_REGION
+          description: region of commercetools composable commerce project
+      securedConfiguration:
+        - key: CTP_PROJECT_KEY
+          description: project key from commercetools composable commerce project
+        - key: CTP_CLIENT_ID
+          description: client id from commercetools composable commerce project
+        - key: CTP_CLIENT_SECRET
+          description: client secret from commercetools composable commerce project
+        - key: CTP_SCOPE
+          description: scope from commercetools composable commerce project
+        - key: CTP_API_URL
+          description: CTP_API_URL from commercetools composable commerce project
+        - key: CTP_AUTH_URL
+          description: CTP_AUTH_URL file path from commercetools composable commerce project
+
+  - name: import-product-discount
+      applicationType: service
+      endpoint: /product-discount
+      scripts:
+        postDeploy: npm install
+      configuration:
+        standardConfiguration:
+          - key: CTP_REGION
+            description: region of commercetools composable commerce project
+        securedConfiguration:
+          - key: CTP_PROJECT_KEY
+            description: project key from commercetools composable commerce project
+          - key: CTP_CLIENT_ID
+            description: client id from commercetools composable commerce project
+          - key: CTP_CLIENT_SECRET
+            description: client secret from commercetools composable commerce project
+          - key: CTP_SCOPE
+            description: scope from commercetools composable commerce project
+          - key: CTP_API_URL
+            description: CTP_API_URL from commercetools composable commerce project
+          - key: CTP_AUTH_URL
+            description: CTP_AUTH_URL file path from commercetools composable commerce project

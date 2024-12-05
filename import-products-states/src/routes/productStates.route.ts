@@ -17,6 +17,23 @@ productStatesRouter.post('/', async(req, res, next)=>{
       }
     });
     
+  productStatesRouter.post('/hello', async(req, res, next)=>{
+    logger.info('Importing product states n message received');
+    try {
+        res.send("HELLOOOO 1st");
+      } catch (error) {
+        next(error);
+      }
+    });
+
+  productStatesRouter.post('/hello-world', async(req, res, next)=>{
+    logger.info('Importing product states n message received');
+    try {
+        res.send("HELLLLO WORLD !!!!!");
+      } catch (error) {
+        next(error);
+      }
+    });
 
 
 export default productStatesRouter;

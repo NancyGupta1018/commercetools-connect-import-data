@@ -56,7 +56,7 @@ export const deleteAllProductTypes = createStandardDelete({
 })
 
 export const importProductTypes = (
-  typesPath = 'C:/Connecters-application/commercetools-connect-import-data/import-products/src/data/product-type.json'
+  typesPath = 'C:/Connecters-application/commercetools-connect-import-data/import-data/src/data/product-type.json'
 ) =>
   readJson(typesPath)
     .then((productTypes) =>

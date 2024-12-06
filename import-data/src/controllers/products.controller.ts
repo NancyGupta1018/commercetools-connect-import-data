@@ -308,9 +308,9 @@ const toProduct = (
 }
 
 export const importProducts = (
-  productPath = 'C:/Connecters-application/commercetools-connect-import-data/import-products/src/data/products.csv',
-  categoriesPath = 'C:/Connecters-application/commercetools-connect-import-data/import-products/src/data/categories.csv',
-  typesPath = 'C:/Connecters-application/commercetools-connect-import-data/import-products/src/data/product-type.json',
+  productPath = 'C:/Connecters-application/commercetools-connect-import-data/import-data/src/data/products.csv',
+  categoriesPath = 'C:/Connecters-application/commercetools-connect-import-data/import-data/src/data/categories.csv',
+  typesPath = 'C:/Connecters-application/commercetools-connect-import-data/import-data/src/data/product-type.json',
   limit = Number.POSITIVE_INFINITY
 ) => {
   const csv = require('csvtojson')

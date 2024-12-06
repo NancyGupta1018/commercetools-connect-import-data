@@ -56,7 +56,7 @@ export const deleteAllProductTypes = createStandardDelete({
 })
 
 export const importProductTypes = (
-  typesPath = 'C:/Connecters-application/commercetools-connect-import-data/import-data/src/data/product-type.json'
+  typesPath = process.cwd() + '/src/data/product-type.json'
 ) =>
   readJson(typesPath)
     .then((productTypes) =>
@@ -308,9 +308,9 @@ const toProduct = (
 }
 
 export const importProducts = (
-  productPath = 'C:/Connecters-application/commercetools-connect-import-data/import-data/src/data/products.csv',
-  categoriesPath = 'C:/Connecters-application/commercetools-connect-import-data/import-data/src/data/categories.csv',
-  typesPath = 'C:/Connecters-application/commercetools-connect-import-data/import-data/src/data/product-type.json',
+  productPath =  process.env.PRODUCTS_CSV_FILE_PATH || './data/products.csv',
+  categoriesPath = process.env.CSV_FILE_PATH ||'./data/categories.csv',
+  typesPath = process.cwd() + '/src/data/product-type.json',
   limit = Number.POSITIVE_INFINITY
 ) => {
   const csv = require('csvtojson')

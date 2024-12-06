@@ -206,7 +206,7 @@ dataRouter.post('/orders', async (req, res, next) => {
   }
 });
 
-dataRouter.post('/', async (req, res, next) => {
+dataRouter.post('/stores', async (req, res, next) => {
   logger.info('Importing stores message received');
   try {
     logger.info('stores router try block');

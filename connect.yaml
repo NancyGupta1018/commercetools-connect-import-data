@@ -27,4 +27,10 @@ deployAs:
           description: ORDERS_CSV_FILE_PATH file path from commercetools composable commerce project
         - key: PRODUCTS_CSV_FILE_PATH
           description: PRODUCTS_CSV_FILE_PATH file path from commercetools composable commerce project
+        - key: INVENTORY_FILE_PATH
+          description: INVENTORY_FILE_PATH file path from commercetools composable commerce project
+        - key: INVENTORY_STORES_FILE_PATH
+          description: INVENTORY_STORES_FILE_PATH file path from commercetools composable commerce project
+
+
 

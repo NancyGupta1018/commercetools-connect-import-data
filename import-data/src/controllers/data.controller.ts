@@ -133,7 +133,6 @@ export const importAllData = () => {
     importShippingMethods,
     importChannels,
     importLineItemStates,
-    importProductStates,
     importCustomerGroups,
     importCustomers,
     importProducts,

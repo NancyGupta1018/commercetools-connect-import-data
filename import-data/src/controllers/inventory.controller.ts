@@ -17,8 +17,8 @@ export const deleteInventory = createStandardDelete({
 })
 
 
-export const importInventory = (inventoryPath: string = process.env.INVENTORY_FILE_PATH || './data/inventory.csv', 
-  inventoryStoresPath : string = process.env.INVENTORY_STORES_FILE_PATH || './data/inventory-stores.csv'
+export const importInventory = (inventoryPath: string = process.env.INVENTORY_FILE_PATH || '/src/data/inventory.csv', 
+  inventoryStoresPath : string = process.env.INVENTORY_STORES_FILE_PATH || '/src/data/inventory-stores.csv'
 ) =>
   Promise.all([
     csv().fromFile(inventoryPath),

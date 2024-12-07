@@ -4,6 +4,7 @@ import {
   logAndExit,
   createStandardDelete
 } from '../helpers'
+import { logger } from '../utils/logger.utils'
 require('dotenv').config()
 
 export const deleteAllProductDiscounts = createStandardDelete(
@@ -14,6 +15,7 @@ export const deleteAllProductDiscounts = createStandardDelete(
 )
 
 export const importProductDiscounts = () =>
+  logger.info("Reached Product Discount");
   execute({
     uri: productDiscountService.build(),
     method: 'POST',

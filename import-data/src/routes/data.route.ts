@@ -23,8 +23,20 @@ import {
 import { deleteAllCarts } from '../controllers/carts.controller';
 import { importOrders } from '../controllers/orders.controller';
 import { importStores } from '../controllers/stores.controller';
+import { deleteAndImport } from '../controllers/data.controller'
 
 const dataRouter = Router();
+
+dataRouter.post('/data', async (req, res, next) => {
+  logger.info('Importing all data message received');
+  try {
+    logger.info('Create all data try block');
+    await deleteAndImport();
+    res.send('importing all data successfully!!');
+  } catch (error) {
+    next(error);
+  }
+});
 
 dataRouter.post('/project', async (req, res, next) => {
   logger.info('Importing projects message received');

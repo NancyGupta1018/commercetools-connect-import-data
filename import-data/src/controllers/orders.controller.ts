@@ -65,10 +65,10 @@ const orderDraft = (item: any) => {
 }
 
 export const importOrders = (
-  csvFilePath : string = process.env.ORDERS_CSV_FILE_PATH || './data/orders.csv'
+  OrdersCsvFilePath = process.env.ORDERS_CSV_FILE_PATH || '/src/data/orders.csv'
 ) =>
   require('csvtojson')()
-    .fromFile(csvFilePath)
+    .fromFile(OrdersCsvFilePath)
     .then((rawJson: any) => [
       ...rawJson
         .reduce((result: any, item: any) => {
